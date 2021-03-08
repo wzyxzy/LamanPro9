@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wzy.lamanpro"
+    android:installLocation="internalOnly">
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <application
+        android:name=".common.LaManApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.ReportActivity"
+            android:label="@string/title_activity_manage_report"
+            android:parentActivityName=".activity.Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.Main2Activity" />
+        </activity>
+        <activity android:name=".activity.BaseDataCollectActivity" />
+        <activity android:name=".activity.ChooseNameActivity" />
+        <activity
+            android:name=".activity.DataDetails"
+            android:label="@string/title_activity_data_details"
+            android:parentActivityName=".activity.ManageData">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.ManageData" />
+        </activity>
+        <activity
+            android:name=".activity.HisDetails"
+            android:label="@string/title_activity_his_details"
+            android:parentActivityName=".activity.ManageHis">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.ManageHis" />
+        </activity>
+        <activity
+            android:name=".activity.AddLibrary"
+            android:label="@string/title_activity_add_library"
+            android:parentActivityName=".activity.Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".activity.ManageHis"
+            android:label="@string/title_activity_manage_his"
+            android:parentActivityName=".activity.Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".activity.ManageData"
+            android:label="@string/title_activity_manage_data"
+            android:parentActivityName=".activity.Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".activity.UserDetails"
+            android:label="@string/title_activity_manage_users"
+            android:parentActivityName=".activity.ManageUsers">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.ManageUsers" />
+        </activity>
+        <activity
+            android:name=".activity.ManageUsers"
+            android:label="@string/title_activity_manage_users"
+            android:parentActivityName=".activity.Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".activity.SettingTest"
+            android:label="@string/title_activity_setting_test"
+            android:parentActivityName=".activity.Main2Activity"
+            android:theme="@style/CommonPopup">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".activity.Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wzy.lamanpro.activity.Main2Activity" />
+        </activity>
+        <activity android:name=".activity.MainActivity" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".activity.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" /> -->
+            <!-- </intent-filter> -->
+            <!-- 以下这个meta-data是要手工增加上，他是用来过滤你的具体USB设备的，其中的device_filter是个xml文件 -->
+            <!-- <meta-data -->
+            <!-- android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" -->
+            <!-- android:resource="@xml/device_filter" /> -->
+        </activity>
+        <activity
+            android:name=".activity.FirstActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="com.github.mjdev.libaums.storageprovider.UsbDocumentProvider"
+            android:authorities="com.github.mjdev.libaums.storageprovider.documents"
+            android:enabled="@bool/isAtLeastKitKat"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
+
+        <receiver
+            android:name=".service.MyReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application> <!-- 两种provider的权限 -->
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="true" /> <!-- 仅网络定位的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- <uses-permission android:name="android.permission.SHUTDOWN" -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- tools:ignore="ProtectedPermissions" /> -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.HARDWARE_TEST"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission
+        android:name="android.hardware.usb.host"
+        android:required="false" />
+
+</manifest>

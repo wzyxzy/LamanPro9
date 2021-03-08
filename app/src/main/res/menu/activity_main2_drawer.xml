@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_add_library"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="建库" />
+        <item
+            android:id="@+id/nav_manage_library"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="数据库管理" />
+        <item
+            android:id="@+id/nav_manage_his"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="测试数据管理" />
+        <item
+            android:id="@+id/nav_manage_report"
+            android:icon="@drawable/ic_menu_report"
+            android:title="报告单管理" />
+        <item
+            android:id="@+id/nav_manage_user"
+            android:icon="@drawable/ic_menu_user"
+            android:title="用户管理" />
+    </group>
+
+    <item android:title="更多">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="系统配置" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_menu_send"
+                android:title="用户注销" />
+            <item
+                android:id="@+id/nav_shutdown"
+                android:icon="@drawable/ic_menu_shutdown"
+                android:title="关闭系统" />
+        </menu>
+    </item>
+
+</menu>

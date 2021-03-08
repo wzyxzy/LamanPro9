@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/item_text" />
+
+    <TextView
+        android:id="@+id/account"
+        style="@style/item_text"
+        android:layout_weight="2"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/email"-->
+        <!--style="@style/item_text" />-->
+</LinearLayout>

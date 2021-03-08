@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.wzy.lamanpro"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 11
+        versionName "2.1.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    greendao {
+        schemaVersion 12
+        targetGenDir 'src/main/java'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation(name: 'shform-3.2.2', ext: 'aar')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:1.0.0'
+    implementation files('libs/jxl-2.6.12.jar')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    //implementation 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    //implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.orhanobut:logger:2.2.0'
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.1.6'
+    implementation 'com.github.mjdev:libaums:0.6.0'
+    implementation 'com.github.mjdev:libaums-storageprovider:0.5.1'
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'com.raman.utility:locallib:1.4'
+}

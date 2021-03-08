@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="use_mode"
+        android:summary="当前为快检模式"
+        android:title="是否精检" />
+
+    <EditTextPreference
+        android:dialogTitle="功率"
+        android:key="power"
+        android:numeric="integer"
+        android:summary="66"
+        android:title="功率" />
+
+    <EditTextPreference
+        android:dialogTitle="积分时间"
+        android:key="time"
+        android:numeric="integer"
+        android:summary="500"
+        android:title="积分时间" />
+
+    <EditTextPreference
+        android:dialogTitle="积分次数"
+        android:key="once"
+        android:numeric="integer"
+        android:summary="10"
+        android:title="积分次数" />
+
+</PreferenceScreen>
