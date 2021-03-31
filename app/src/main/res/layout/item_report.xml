@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/bg_dia_blue">
+
+    <CheckBox
+        android:id="@+id/check_report"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="5dp" />
+
+    <TextView
+        android:id="@+id/num"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="序号"
+        android:textSize="16sp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/test_user"
+        style="@style/text_train"
+        android:text="测试员" />
+
+    <TextView
+        android:id="@+id/test_time"
+        style="@style/text_train"
+        android:text="测试时间" />
+
+
+</LinearLayout>
